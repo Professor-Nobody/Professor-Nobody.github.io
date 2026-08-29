@@ -77,12 +77,12 @@ document.addEventListener('DOMContentLoaded', () => {
             body.classList.add('gamer-mode');
             modeLabel.textContent = 'GAMER MODE';
             modeIcon.textContent = '🎮';
-            modeBadge.textContent = 'GAMER MODE';
+            if (modeBadge) modeBadge.textContent = 'GAMER MODE';
         } else {
             body.classList.remove('gamer-mode');
             modeLabel.textContent = 'DEV MODE';
             modeIcon.textContent = '💻';
-            modeBadge.textContent = 'DEV MODE';
+            if (modeBadge) modeBadge.textContent = 'DEV MODE';
         }
     }
 
