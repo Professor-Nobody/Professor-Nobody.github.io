@@ -153,6 +153,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const commands = {
         'help': `Available Commands:
   - <span class="accent-text">whoami</span>     : Display bio info
+  - <span class="accent-text">contact</span>    : Show social channels & email
   - <span class="accent-text">projects</span>   : List core infrastructure projects
   - <span class="accent-text">gaming</span>     : View gaming & esports role
   - <span class="accent-text">skills</span>     : View primary system loadout
@@ -165,7 +166,14 @@ document.addEventListener('DOMContentLoaded', () => {
         'whoami': `Syed Ashhar Imam (aka "Professor Nobody")
 Location: Bhopal, Madhya Pradesh, India
 Role: B.Tech CSE Student, Gamer, Tech & Infrastructure Enthusiast.
-Motto: "It works. Don't ask why."`,
+Motto: "It works. Don't ask why."
+Email: ashharimam9@gmail.com`,
+
+        'contact': `Socials & Contact Channels:
+  - GitHub:    https://github.com/Professor-Nobody
+  - YouTube:   https://youtube.com/@iprofessornobody
+  - Instagram: https://instagram.com/professor_nobody_/
+  - Email:     ashharimam9@gmail.com`,
 
         'projects': `1. Self-Hosted NAS & Media Server (Google Drive + rclone + Jellyfin + Docker)
 2. Linux Workstation & Dotfiles Automation (Shell, Systemd, Networking)
