@@ -860,8 +860,80 @@ body.gamer-mode .project-type-badge {
 /* CONTACT SECTION */
 .contact-wrapper {
     text-align: center;
-    max-width: 650px;
+    max-width: 800px;
     margin: 0 auto;
+}
+
+.contact-channels-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.25rem;
+    margin: 2.5rem 0 2rem 0;
+    text-align: left;
+}
+
+.contact-card-link {
+    background: var(--bg-surface);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    padding: 1.25rem;
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    transition: all 0.25s var(--ease-out);
+}
+
+.contact-card-link:hover {
+    border-color: var(--theme-primary);
+    background: var(--bg-surface-hover);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.contact-card-icon {
+    width: 42px;
+    height: 42px;
+    background: rgba(56, 189, 248, 0.08);
+    border: 1px solid rgba(56, 189, 248, 0.2);
+    border-radius: var(--radius-sm);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    flex-shrink: 0;
+}
+
+.contact-card-content {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+    overflow: hidden;
+}
+
+.contact-card-label {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.contact-card-val {
+    font-size: 0.92rem;
+    font-weight: 600;
+    color: var(--text-heading);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.contact-card-action {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    color: var(--theme-primary);
+    margin-top: 0.25rem;
 }
 
 .contact-links-grid {
@@ -898,6 +970,405 @@ body.gamer-mode .project-type-badge {
     font-size: 0.8rem;
     color: var(--text-muted);
     margin-top: 3rem;
+}
+
+/* EXPERIENCE SECTION */
+.experience-list {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.experience-card {
+    background: var(--bg-surface);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    padding: 2.25rem;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s var(--ease-out);
+}
+
+.experience-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; width: 4px; height: 100%;
+    background: var(--border-color);
+    transition: background 0.3s ease;
+}
+
+.experience-card:hover {
+    border-color: var(--border-hover);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.3);
+    background: var(--bg-surface-hover);
+}
+
+.experience-card:hover::before {
+    background: var(--theme-primary);
+}
+
+.experience-card.flagship {
+    border-color: rgba(56, 189, 248, 0.25);
+    background: linear-gradient(180deg, rgba(21, 25, 35, 0.95) 0%, rgba(15, 18, 25, 0.95) 100%);
+}
+
+.experience-card.flagship::before {
+    background: var(--theme-primary);
+}
+
+.experience-header-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.experience-title-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+}
+
+.experience-role {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--text-heading);
+}
+
+.experience-company-row {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+}
+
+.experience-company {
+    font-size: 1.05rem;
+    color: var(--theme-primary);
+    font-weight: 600;
+}
+
+.experience-tag-pill {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    padding: 0.2rem 0.55rem;
+    border-radius: var(--radius-sm);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.03);
+    color: var(--text-muted);
+}
+
+.experience-meta-group {
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    color: var(--text-muted);
+}
+
+.experience-bullets {
+    list-style: none;
+    margin: 1.25rem 0 1.5rem 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    color: var(--text-main);
+    font-size: 0.96rem;
+    line-height: 1.65;
+}
+
+.experience-bullets li {
+    position: relative;
+    padding-left: 1.5rem;
+}
+
+.experience-bullets li::before {
+    content: "▹";
+    position: absolute;
+    left: 0;
+    color: var(--theme-primary);
+    font-weight: bold;
+}
+
+.experience-card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    padding-top: 1.25rem;
+    border-top: 1px dashed var(--border-color);
+}
+
+/* AI-ASSISTED DEVELOPMENT ARCHITECTURE CARD */
+.ai-workflow-card {
+    background: var(--bg-surface);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    padding: 2rem;
+    margin-top: 2rem;
+}
+
+.ai-workflow-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.25rem;
+    margin-top: 1.5rem;
+}
+
+.ai-workflow-step {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-sm);
+    padding: 1.2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+.ai-step-num {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    color: var(--theme-primary);
+    font-weight: 700;
+}
+
+.ai-step-title {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--text-heading);
+}
+
+.ai-step-desc {
+    font-size: 0.84rem;
+    color: var(--text-muted);
+    line-height: 1.5;
+}
+
+/* SKILLS & TECHNICAL INTERESTS V2 */
+.skills-catalog-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.75rem;
+}
+
+.skills-cat-card {
+    background: var(--bg-surface);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    padding: 1.75rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.skills-cat-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 1.25rem;
+    gap: 0.5rem;
+}
+
+.skills-cat-title {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--text-heading);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.skills-level-badge {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    padding: 0.2rem 0.5rem;
+    border-radius: var(--radius-sm);
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.badge-applied {
+    background: rgba(16, 185, 129, 0.1);
+    color: #34d399;
+    border: 1px solid rgba(16, 185, 129, 0.25);
+}
+
+.badge-exploring {
+    background: rgba(245, 158, 11, 0.1);
+    color: #fbbf24;
+    border: 1px solid rgba(245, 158, 11, 0.25);
+}
+
+.skills-badge-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    margin-bottom: 1rem;
+}
+
+.skill-chip {
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid var(--border-color);
+    padding: 0.35rem 0.75rem;
+    border-radius: var(--radius-sm);
+    color: var(--text-main);
+    transition: all 0.2s ease;
+}
+
+.skill-chip:hover {
+    border-color: var(--theme-primary);
+    color: var(--text-heading);
+}
+
+.skills-cat-notes {
+    font-size: 0.82rem;
+    color: var(--text-muted);
+    font-style: italic;
+    border-top: 1px dashed var(--border-color);
+    padding-top: 0.75rem;
+    margin-top: 0.5rem;
+}
+
+/* EDUCATION CARD */
+.education-card {
+    background: var(--bg-surface);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    padding: 2.25rem;
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 2.5rem;
+}
+
+.education-degree {
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: var(--text-heading);
+    margin-bottom: 0.4rem;
+}
+
+.education-college {
+    font-size: 1.1rem;
+    color: var(--theme-primary);
+    margin-bottom: 1rem;
+}
+
+.education-details {
+    color: var(--text-main);
+    font-size: 0.95rem;
+    line-height: 1.65;
+    margin-bottom: 1.25rem;
+}
+
+/* ADDITIONAL EXPERIENCE (ESPORTS & OPERATIONS) */
+.operations-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 1.75rem;
+}
+
+.operation-card {
+    background: var(--bg-surface);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    padding: 1.75rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.op-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 0.75rem;
+}
+
+.op-badge {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    padding: 0.2rem 0.5rem;
+    border-radius: var(--radius-sm);
+    background: rgba(139, 92, 246, 0.1);
+    color: var(--accent-purple);
+    border: 1px solid rgba(139, 92, 246, 0.25);
+}
+
+.op-title {
+    font-size: 1.15rem;
+    font-weight: 700;
+    margin-bottom: 0.35rem;
+}
+
+.op-sub {
+    font-family: var(--font-mono);
+    font-size: 0.82rem;
+    color: var(--text-muted);
+    margin-bottom: 1rem;
+}
+
+.op-desc {
+    font-size: 0.92rem;
+    color: var(--text-main);
+    line-height: 1.6;
+}
+
+/* MOBILE NAVIGATION DRAWER */
+.mobile-nav-toggle {
+    display: none;
+    background: var(--bg-surface);
+    border: 1px solid var(--border-color);
+    color: var(--text-heading);
+    padding: 0.45rem 0.75rem;
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+.mobile-nav-drawer {
+    display: none;
+    position: fixed;
+    top: 70px;
+    left: 0;
+    right: 0;
+    background: rgba(10, 12, 16, 0.97);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-bottom: 1px solid var(--border-color);
+    padding: 1.25rem 1.75rem;
+    z-index: 999;
+    flex-direction: column;
+    gap: 0.85rem;
+    box-shadow: 0 16px 32px rgba(0, 0, 0, 0.6);
+}
+
+.mobile-nav-drawer.active {
+    display: flex;
+}
+
+.mobile-nav-drawer a {
+    color: var(--text-main);
+    text-decoration: none;
+    font-family: var(--font-mono);
+    font-size: 0.9rem;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+    transition: color 0.2s ease, padding-left 0.2s ease;
+}
+
+.mobile-nav-drawer a:hover {
+    color: var(--theme-primary);
+    padding-left: 0.5rem;
 }
 
 /* INTERACTIVE TERMINAL MODAL */
@@ -967,7 +1438,9 @@ body.gamer-mode .project-type-badge {
 @media (max-width: 900px) {
     .hero-grid,
     .about-grid,
-    .gaming-hud-grid {
+    .gaming-hud-grid,
+    .skills-catalog-grid,
+    .education-card {
         grid-template-columns: 1fr;
         gap: 2rem;
     }
@@ -978,6 +1451,19 @@ body.gamer-mode .project-type-badge {
     
     .nav-links {
         display: none;
+    }
+
+    .mobile-nav-toggle {
+        display: flex;
+    }
+
+    .experience-header-row {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .experience-meta-group {
+        text-align: left;
     }
 }
 
@@ -993,5 +1479,13 @@ body.gamer-mode .project-type-badge {
     .custom-cursor-dot,
     .custom-cursor-ring {
         display: none;
+    }
+
+    .nav-controls #term-open-btn {
+        display: none;
+    }
+
+    .contact-channels-grid {
+        grid-template-columns: 1fr;
     }
 }
